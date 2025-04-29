@@ -22,10 +22,13 @@ Este projeto utiliza o Cargo, o gerenciador de pacotes e sistema de build do Rus
 
 ### Compilação
 
-Para compilar com otimizações (recomendado para medição de desempenho):
+**Forma recomendada:**
+
+Para compilar e atualizar automaticamente o Cargo.toml com todos os bins, execute:
 ```bash
-cargo build --release
+bash build.sh
 ```
+Isso irá atualizar o arquivo Cargo.toml com todos os arquivos de cada dia e compilar o projeto em modo release.
 
 ### Execução
 
