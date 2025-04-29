@@ -1,3 +1,20 @@
+/*
+--- Dia 1: Histeria do Historiador (Parte 2) ---
+
+Sua análise apenas confirmou o que todos temiam: as duas listas de IDs de localização são realmente muito diferentes.
+
+Ou será que são?
+
+Os Historiadores não conseguem concordar sobre qual grupo cometeu os erros ou como ler a maior parte da caligrafia do Chefe, mas na confusão você nota um detalhe interessante: muitos IDs de localização aparecem em ambas as listas! Talvez os outros números não sejam IDs de localização, mas sim caligrafias mal interpretadas.
+
+Desta vez, você precisará descobrir exatamente com que frequência cada número da lista da esquerda aparece na lista da direita. Calcule uma pontuação total de similaridade somando cada número na lista da esquerda depois de multiplicá-lo pelo número de vezes que esse número aparece na lista da direita.
+
+Para o desafio da parte 2, você precisa:
+1. Contar quantas vezes cada número da lista 2 aparece
+2. Para cada número na lista 1, multiplicá-lo pela frequência correspondente na lista 2
+3. Somar todos esses produtos para encontrar a "pontuação de similaridade"
+*/
+
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
@@ -60,7 +77,7 @@ fn main() {
         .map(|&num| num * (*freq_map.get(&num).unwrap_or(&0) as i32))
         .sum();
 
-    println!("A soma é: {}", soma);
+    println!("Pontuação de Similaridade: {}", soma);
 
     let duration = start_time.elapsed(); // Calcula a duração total
     println!("Tempo de execução: {:?}", duration);

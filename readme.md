@@ -22,11 +22,6 @@ Este projeto utiliza o Cargo, o gerenciador de pacotes e sistema de build do Rus
 
 ### Compilação
 
-Para compilar todos os programas em modo de desenvolvimento:
-```bash
-cargo build
-```
-
 Para compilar com otimizações (recomendado para medição de desempenho):
 ```bash
 cargo build --release

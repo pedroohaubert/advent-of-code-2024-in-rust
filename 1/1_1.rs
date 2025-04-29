@@ -1,3 +1,26 @@
+/*
+--- Dia 1: Histeria do Historiador ---
+
+O Historiador Chefe está sempre presente no grande lançamento do trenó de Natal, mas ninguém o vê há meses! A última vez que alguém soube dele, ele estava visitando locais historicamente significativos para o Polo Norte; um grupo de Historiadores Seniores pediu que você os acompanhasse enquanto verificam os lugares onde acham que ele provavelmente visitou.
+
+À medida que cada local é verificado, eles o marcarão em sua lista com uma estrela. Eles acham que o Historiador Chefe deve estar em um dos primeiros cinquenta lugares que procurarão, então, para salvar o Natal, você precisa ajudá-los a conseguir cinquenta estrelas em sua lista antes que o Papai Noel parta em 25 de dezembro.
+
+Colete estrelas resolvendo quebra-cabeças. Dois quebra-cabeças serão disponibilizados em cada dia no calendário do Advento; o segundo quebra-cabeça é desbloqueado quando você completa o primeiro. Cada quebra-cabeça concede uma estrela. Boa sorte!
+
+Você nem saiu ainda e o grupo de Historiadores Seniores Elfos já encontrou um problema: sua lista de locais para verificar está atualmente vazia. Eventualmente, alguém decide que o melhor lugar para verificar primeiro seria o escritório do Historiador Chefe.
+
+Ao entrar no escritório, todos confirmam que o Historiador Chefe realmente não está em lugar nenhum. Em vez disso, os Elfos descobrem uma variedade de notas e listas de locais historicamente significativos! Parece ser o planejamento que o Historiador Chefe estava fazendo antes de partir. Talvez essas notas possam ser usadas para determinar quais locais procurar?
+
+Em todo o escritório do Chefe, os locais historicamente significativos são listados não por nome, mas por um número único chamado ID de localização. Para garantir que não percam nada, os Historiadores se dividem em dois grupos, cada um procurando pelo escritório e tentando criar sua própria lista completa de IDs de localização.
+
+Há apenas um problema: ao colocar as duas listas lado a lado (sua entrada do quebra-cabeça), rapidamente fica claro que as listas não são muito semelhantes. Talvez você possa ajudar os Historiadores a reconciliar suas listas?
+
+Para o desafio da parte 1, você precisa:
+1. Parear os números das duas listas (o menor da lista 1 com o menor da lista 2, o segundo menor da lista 1 com o segundo menor da lista 2, etc)
+2. Para cada par, calcular a distância absoluta entre os números
+3. Somar todas essas distâncias para encontrar a "distância total" entre as listas
+*/
+
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
 use std::fs::File;
@@ -57,7 +80,7 @@ fn main() {
         }
     }
 
-    println!("Distância total das listas {}", distance);
+    println!("Distância total entre as listas: {}", distance);
 
     let duration = start_time.elapsed();
     println!("Tempo de execução: {:?}", duration);
