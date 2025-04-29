@@ -1,1 +1,14 @@
 .cursor/
+
+# Arquivos gerados pelo Cargo
+/target/
+
+# Arquivo de backup do rustfmt
+**/*.rs.bk
+
+# Arquivos de configuração local do Cargo
+.cargo/config.toml
+Cargo.lock
+
+# MSVC Windows builds do rustc geram esses arquivos
+*.pdb

@@ -1,0 +1,17 @@
+[package]
+name = "advent_of_code_2024"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# Define the two separate binary executables
+[[bin]]
+name = "d1_1"
+path = "1/1_1.rs"
+
+[[bin]]
+name = "d1_2"
+path = "1/1_2.rs" 
