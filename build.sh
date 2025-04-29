@@ -7,7 +7,7 @@ cat <<EOF > Cargo.toml
 [package]
 name = "advent_of_code_2024"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

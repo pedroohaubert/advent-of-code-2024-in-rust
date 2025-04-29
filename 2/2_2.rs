@@ -1,7 +1,7 @@
 // --- Part Two ---
 // The engineers are surprised by the low number of safe reports until they realize they forgot to tell you about the Problem Dampener.
 
-// The Problem Dampener is a reactor-mounted module that lets the reactor safety systems tolerate a single bad level in what would otherwise be a safe report. It's like the bad level never happened!
+// The Problem Dampener is a reactor-mounted module that lets the reactor safety systems tolerate a single bad level in what would otherwise be a unsafe report. It's like the bad level never happened!
 
 // Now, the same rules apply as before, except if removing a single level from an unsafe report would make it safe, the report instead counts as safe.
 
@@ -74,24 +74,23 @@ fn main() {
             Err(_) => continue, // Pula linhas inválidas
         };
 
-        // Verifica se já é seguro ou encontra a primeira violação
-        match find_first_violation(&numbers) {
-            Ok(_) => {
-                // Seguro sem remover nenhum nível
-                safe_reports += 1;
+        // Verifica se já é seguro sem remover nenhum número
+        if find_first_violation(&numbers).is_ok() {
+            safe_reports += 1;
+            continue;
+        }
+
+        // Se não for seguro, tenta remover cada elemento um por um
+        let mut is_safe_with_removal = false;
+        for skip_index in 0..numbers.len() {
+            if check_with_skip(&numbers, skip_index) {
+                is_safe_with_removal = true;
+                break;
             }
-            Err(violation_index) => {
-                // Não é seguro. Tenta remover o elemento no índice da violação
-                if check_with_skip(&numbers, violation_index) {
-                    safe_reports += 1;
-                } 
-                // Se não funcionou, tenta remover o *próximo* elemento
-                // Verifica se o próximo índice existe antes de tentar
-                else if violation_index + 1 < numbers.len() && check_with_skip(&numbers, violation_index + 1) {
-                    safe_reports += 1;
-                }
-                // Se nenhuma das remoções tornou seguro, o relatório é inseguro.
-            }
+        }
+
+        if is_safe_with_removal {
+            safe_reports += 1;
         }
     }
 

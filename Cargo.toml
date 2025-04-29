@@ -9,3 +9,18 @@ edition = "2024"
 
 # Define the binary executables
 
+[[bin]]
+name = "d1_1"
+path = "1/1_1.rs"
+
+[[bin]]
+name = "d1_2"
+path = "1/1_2.rs"
+
+[[bin]]
+name = "d2_1"
+path = "2/2_1.rs"
+
+[[bin]]
+name = "d2_2"
+path = "2/2_2.rs"
