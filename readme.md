@@ -5,3 +5,5 @@ Este repositório contém as minhas soluções para o [Advent of Code 2024](http
 O objetivo é aprender e praticar Rust resolvendo os desafios diários do evento. Cada pasta/diretório corresponde a um dia do Advent of Code, com o código-fonte e explicações comentadas para ajudar no entendimento da linguagem e das soluções.
 
 Sinta-se à vontade para acompanhar, sugerir melhorias ou tirar dúvidas!
+
+Obs: Não sei nada sobre rust quando iniciando isso
