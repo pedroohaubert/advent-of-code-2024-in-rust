@@ -34,17 +34,29 @@ cargo build --release
 
 ### Execução
 
-Para executar um programa específico após compilação (exemplo para o dia 1, desafio 1):
+Método recomendado para executar (inclui medição de tempo e memória):
+```bash
+./run.sh d1_1
+```
+
+Isso exibirá:
+- A saída normal do programa
+- O tempo de execução
+- O pico de memória utilizado (em KB e MB)
+
+Métodos alternativos para execução:
+
+1. Executar diretamente o binário:
 ```bash
 ./target/release/d1_1
 ```
 
-Alternativamente, você pode compilar e executar em um único comando:
+2. Compilar e executar em um único comando:
 ```bash
 cargo run --release --bin d1_1
 ```
 
-Onde os binários estão nomeados no seguinte formato:
+Os binários estão nomeados no seguinte formato:
 - `d1_1`: Dia 1, Parte 1
 - `d1_2`: Dia 1, Parte 2
 - E assim por diante para os próximos dias
@@ -54,7 +66,3 @@ Onde os binários estão nomeados no seguinte formato:
 Os programas incluem medições de tempo de execução, exibidas em microssegundos (µs):
 - 1 segundo (s) = 1.000.000 µs
 - 1 milissegundo (ms) = 1.000 µs
-
-Para medir o uso de memória, você pode usar ferramentas externas como:
-- No macOS/Linux: `/usr/bin/time -l ./target/release/d1_1`
-- No macOS (alternativa): `ps -o rss= -p $$ | xargs`
