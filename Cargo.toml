@@ -1,11 +1,12 @@
 [package]
 name = "advent_of_code_2024"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+regex = "1.10.4"
 
 # Define the binary executables
 
@@ -24,3 +25,7 @@ path = "2/2_1.rs"
 [[bin]]
 name = "d2_2"
 path = "2/2_2.rs"
+
+[[bin]]
+name = "d3_1"
+path = "3/3_1.rs"
