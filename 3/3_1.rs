@@ -16,22 +16,28 @@ use std::time::Instant;
 use regex::Regex;
 
 fn main() {
+    // Marca o início da execução para medir o tempo
     let start_time = Instant::now();
 
+    // Define o caminho do arquivo de entrada
     let input_path: &Path = Path::new("3/input.txt");
     
-    // Abre o arquivo
+    // Abre o arquivo de entrada
     let file: File = File::open(&input_path).expect("Não foi possível abrir o arquivo");
 
     // Usa BufReader para uma leitura mais eficiente do arquivo linha por linha
     let reader: BufReader<File> = BufReader::new(file);
 
+    // Variável para acumular a soma total das multiplicações
     let mut total_sum: i32 = 0;
+    // Expressão regular para encontrar instruções válidas do tipo mul(X,Y)
     let pattern = Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)").unwrap();
 
+    // Itera sobre cada linha do arquivo
     for line in reader.lines() {
         let line: String = line.unwrap();
 
+        // Para cada correspondência da regex na linha, extrai os números e soma o produto
         for match_content in pattern.captures_iter(&line) {
             let num1: i32 = match_content[1].parse().unwrap();
             let num2: i32 = match_content[2].parse().unwrap();
@@ -39,8 +45,10 @@ fn main() {
         }
     }
 
+    // Exibe o resultado final da soma das multiplicações
     println!("A soma de todas as multiplicações é: {}", total_sum);
 
+    // Exibe o tempo de execução do programa
     let duration = start_time.elapsed();
     println!("Tempo de execução: {:?}", duration);
 }

@@ -29,3 +29,11 @@ path = "2/2_2.rs"
 [[bin]]
 name = "d3_1"
 path = "3/3_1.rs"
+
+[[bin]]
+name = "d3_2"
+path = "3/3_2.rs"
+
+[[bin]]
+name = "d4_1"
+path = "4/4_1.rs"
